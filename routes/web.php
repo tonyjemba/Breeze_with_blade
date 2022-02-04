@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth','verified'])->name('dashboard');
 
 Route::post('/checkfield',[Email_or_UsernameController::class,'check'])->name('email_username');
 require __DIR__.'/auth.php';
